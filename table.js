@@ -66,6 +66,7 @@ CreatedTable.prototype.createdTableTbody = function(tableElement, arr) {
 
 CreatedTable.prototype.blurUpdate = function(e, arr) {
   let el = e.target;
+  el.contentEditable = false;
   let pContent = el.innerHTML;
   let indexStr = el.parentNode.getAttribute('data-index');
   let indexList = indexStr.split('-');
