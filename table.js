@@ -8,15 +8,15 @@ CreatedTable.prototype.created = function(arr, tableElement) {
 };
 CreatedTable.prototype.createdTableHhead = function(tableElement, arr) {
   let theadEl = document.createElement('thead');
-  let theadTrEl = document.createElement('tr');
+  let theadThEl = document.createElement('th');
   arr.forEach((v, i) => {
     let tdEl = document.createElement('td');
     tdEl.innerHTML = v.title;
     tdEl.style.width = v.width + 'px';
 
-    theadTrEl.appendChild(tdEl);
+    theadThEl.appendChild(tdEl);
   });
-  theadEl.appendChild(theadTrEl);
+  theadEl.appendChild(theadThEl);
   tableElement.appendChild(theadEl);
 };
 
