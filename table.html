@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      tbody tr:nth-of-type(2n-1) {
+        background-color: rgb(224, 224, 224);
+      }
+      tbody tr:nth-of-type(2n) {
+        background-color: #ccc;
+      }
+      tbody td.active {
+        background-color: pink;
+      }
+      tbody td p {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="my-table" cellspacing="0" cellpadding="0" border="1"></table>
+  </body>
+</html>
+
+<script src="./table.js"></script>
+<script>
+  let tableList = [
+    [
+      { field: 'name', title: '姓名', width: 100 },
+      { field: 'nickName', title: '昵称', width: 100 },
+      { field: 'age', title: '年龄', width: 100 },
+      { field: 'sex', title: '性别', width: 80 },
+      { field: 'state', title: '状态', width: 100 },
+      { field: 'remark', title: '备注', width: 200 }
+    ],
+    [
+      {
+        name: '张三',
+        nickName: '张33',
+        age: 18,
+        sex: '男',
+        state: '正常',
+        remark: '我是备注信息1',
+        xxx: '我是无用的数据, 不需要渲染的'
+      },
+      {
+        name: '李四',
+        nickName: '李44',
+        age: 28,
+        sex: '男',
+        state: '正常',
+        remark: '我是备注信息2',
+        xxx: '我是无用的数据, 不需要渲染的'
+      },
+      {
+        name: '王五',
+        nickName: '王55',
+        age: 48,
+        sex: '男',
+        state: '不正常',
+        remark: '我是备注信息3',
+        xxx: '我是无用的数据, 不需要渲染的'
+      },
+      {
+        name: '王蓉',
+        nickName: '王蓉66',
+        age: 18,
+        sex: '女',
+        state: '正常',
+        remark: '我是备注信息4',
+        xxx: '我是无用的数据, 不需要渲染的'
+      },
+      {
+        name: '貂蝉',
+        nickName: '貂蝉77',
+        age: 1888,
+        sex: '女',
+        state: '不正常',
+        remark: '我是备注信息5',
+        xxx: '我是无用的数据, 不需要渲染的'
+      },
+      {
+        name: '王昭君',
+        nickName: '王昭君88',
+        age: 123,
+        sex: '女',
+        state: '不正常',
+        remark: '我是备注信息6',
+        xxx: '我是无用的数据, 不需要渲染的'
+      }
+    ]
+  ];
+  let myTable = new CreatedTable();
+  myTableEl = document.getElementById('my-table');
+  myTable.created(tableList, myTableEl);
+</script>
